@@ -40,8 +40,7 @@ Traditional browsing methods are time-consuming and may not provide personalized
 ## 🚀 How to Run
 1. Clone this repository:
    ```bash
-   git clone https://github.com/yourusername/movie-recommender.git
-   cd movie-recommender
+  https://github.com/somdevtiwari578-dotcom/Movie-Recommendation-System 
 Install dependencies:
 
 bash
@@ -66,6 +65,10 @@ User rating input system.
 Deployment with live demo link.
 
 Poster caching/local dataset integration.
+
+
+##🔗🔗 Live Demo
+[Click here to try the app](https://movie-recommendation-system-6xydklvyyor4z5gad2flti.streamlit.app/)
 
 👨‍💻 Author
 Somdev Tiwari  
