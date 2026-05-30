@@ -57,15 +57,19 @@ def get_movie_details(title):
     try:
         response = requests.get(url, timeout=5)
         data = response.json()
-        if data['results']:
+
+        # Safe check: 'results' key exist karti hai ya nahi
+        if 'results' in data and data['results']:
             movie = data['results'][0]
-            poster = f"https://image.tmdb.org/t/p/w500{movie['poster_path']}" if movie['poster_path'] else None
+            poster = f"https://image.tmdb.org/t/p/w500{movie['poster_path']}" if movie.get('poster_path') else None
             rating = movie.get('vote_average', 'N/A')
             return poster, rating
+        else:
+            # Agar results empty hai
+            return None, "N/A"
     except requests.exceptions.RequestException:
-        # Agar API connect na ho to safe fallback
-        return None, None
-    return None, None
+        # Agar API connect na ho
+        return None, "N/A"
 
 # -----------------------------
 # Streamlit UI
